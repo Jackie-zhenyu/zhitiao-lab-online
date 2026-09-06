@@ -1,0 +1,366 @@
+{
+  "generated_at_utc": "2026-09-05T22:35:29.887639+00:00",
+  "phase": 7,
+  "python": "3.12.14",
+  "platform": "win32",
+  "dependencies": {
+    "streamlit": "1.63.0",
+    "pandas": "2.3.3",
+    "numpy": "2.5.2",
+    "scipy": "1.18.1",
+    "plotly": "6.9.0",
+    "pydantic": "2.13.5",
+    "openai": "2.54.0",
+    "httpx": "0.28.1",
+    "python-dotenv": "1.2.3",
+    "pytest": "9.1.1"
+  },
+  "baseline": {
+    "path": "work/pytest-stage7-baseline.xml",
+    "sha256": "7d1a97372972e3c3d06cea2ce0722ff9744940463fcaaa853e0e5e7b88d49faa",
+    "tests": 524,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "junit_seconds": 28.279
+  },
+  "final": {
+    "path": "work/pytest-stage7-final.xml",
+    "sha256": "e87d5abd8d097de32eaad0c4be2367f2aa37ee4c5eed1c9fe80fe5571d6589a6",
+    "tests": 565,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "junit_seconds": 117.633,
+    "command": ".venv\\Scripts\\python.exe -m pytest -q --junitxml=work/pytest-stage7-final.xml",
+    "exit_code": 0,
+    "console_summary": "565 passed in 117.75s"
+  },
+  "related": [
+    {
+      "path": "work/pytest-stage7-local-final.xml",
+      "sha256": "005d0de20de7cb0c9386119eb14a9174ff652442e5df64e781c6af9ea95af37f",
+      "tests": 415,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "junit_seconds": 22.936
+    },
+    {
+      "path": "work/pytest-stage7-evidence.xml",
+      "sha256": "55e2b38d4142a3f3975ce7ae72b22ce8fd57dd4744fd98c8b27d1dc2e6300d5d",
+      "tests": 133,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "junit_seconds": 20.851
+    },
+    {
+      "path": "work/pytest-stage7-delivery.xml",
+      "sha256": "300ca521749e8534d51aa5f7634aa36276d9cf09b0bd797cde0dc85b6320aadf",
+      "tests": 16,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "junit_seconds": 1.008
+    },
+    {
+      "path": "work/pytest-stage7-ab-navigation-probe.xml",
+      "sha256": "4efe369d045f6ef17297675dc75e498cd635e75edb7656abf9be44f1054fd62a",
+      "tests": 1,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "junit_seconds": 10.882
+    }
+  ],
+  "pip_check": "No broken requirements found.",
+  "compileall_exit_code": 0,
+  "install": {
+    "existing_environment_exit_code": 0,
+    "clean_environment_exit_code": 0,
+    "locked_packages": 57,
+    "logs": [
+      "work/stage7-existing-install.log",
+      "work/stage7-clean-install.log"
+    ],
+    "linux_wheel_resolution": "passed; cross-platform resolution on Windows, not Linux runtime"
+  },
+  "service": {
+    "command": "scripts\\start.cmd",
+    "address": "127.0.0.1",
+    "port": 8501,
+    "root_http": 200,
+    "health_http": 200,
+    "health_body": "ok"
+  },
+  "protected_sources": [
+    {
+      "path": "core/__init__.py",
+      "sha256": "fd9065a51d046262f30c151f93c2e6d91bc109298644c161cbb24f42e4870640",
+      "unchanged": true
+    },
+    {
+      "path": "core/comparison_models.py",
+      "sha256": "5f8ce9e31c6c15ea5d5a0a45456f19cf50dfc5394ea53f57c33a3da77b7537d5",
+      "unchanged": true
+    },
+    {
+      "path": "core/comparison.py",
+      "sha256": "34bcde8906d1ac9a9b6f25719214fcbbb49c2f80e5d01e1a67f2442354bb2b15",
+      "unchanged": true
+    },
+    {
+      "path": "core/event_models.py",
+      "sha256": "b9ae9d86fdbc74779402a7327c12860cbbbe7020a82c6eea77c656a61fb89514",
+      "unchanged": true
+    },
+    {
+      "path": "core/events.py",
+      "sha256": "4bbfebea7edf1bb4059f9a440e33d55be84867bb553feda3b4e6ba0ba11fd713",
+      "unchanged": true
+    },
+    {
+      "path": "core/import_models.py",
+      "sha256": "809d9958e3d4bf42d92a449b9af2d882d4668372fe9039763e15857bf4a7a327",
+      "unchanged": true
+    },
+    {
+      "path": "core/metric_models.py",
+      "sha256": "4190aaa2bf17dd02d92d959ff79f85a8f8be8a946f9703eb31fbfe3ff8946761",
+      "unchanged": true
+    },
+    {
+      "path": "core/metrics.py",
+      "sha256": "26d1ceb77cc518ba7f819687b71318a29a030a79bc72141125d9c5705411c7f9",
+      "unchanged": true
+    },
+    {
+      "path": "core/models.py",
+      "sha256": "a98eedb468419685c04d1146a90f4525c93b949549e909e72cc91649f667f476",
+      "unchanged": true
+    },
+    {
+      "path": "core/parser.py",
+      "sha256": "e342a5df42f0f75b26c295dd1add98eda06dbac73397ba012a10937fbf60db4c",
+      "unchanged": true
+    },
+    {
+      "path": "core/performance.py",
+      "sha256": "b3853dff177df57e4dfe2b61990be6180ec38daef4b4fd2e15211ba4c8161485",
+      "unchanged": true
+    },
+    {
+      "path": "core/quality.py",
+      "sha256": "7d3e5349ef90f912e98d359ce5e9f0eba665627a78295db2a555199d93016dad",
+      "unchanged": true
+    },
+    {
+      "path": "core/steps.py",
+      "sha256": "4ab5fc774d5e8424a11adeff610ae7ba082ac24d062267b50f06640517c61af3",
+      "unchanged": true
+    },
+    {
+      "path": "tests/agent_fixtures.py",
+      "sha256": "3b46c2ed3e293e58927cac3e574360c2e3a22e0958dbc166eab24d5581f36f75",
+      "unchanged": true
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha256": "d0ab5580164f4316fb97b11e8ef1840fc2a30d3d187be71e71a8f86be575e358",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_agent_runner.py",
+      "sha256": "3451acd7f4f48b66d514f5cf1f64810724c1a0ef1482da4d76b776a237d20b87",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_agent_tools.py",
+      "sha256": "6b56e9e2fcda01e29d38637fe1060784d9098f4d3cea38e68db19cded0e1ec8c",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_agent_ui.py",
+      "sha256": "de8fa7a6d47e0b690936523d09f2606942b2f7ae2fe2ef4a3ce7b4787485ca85",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_app.py",
+      "sha256": "5defef455c8786fa3d3abd7fdeac1a1f4ccf4c5679e632f8382484e5b0d2efbe",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_charts.py",
+      "sha256": "7f965ccc600d55b9c2fcc94ac0f569c8f3318ae977f34f8bd499feebb1de87b2",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_closed_loop.py",
+      "sha256": "a1178db5443561e92a2777494ea11b470419142b7e6d8dc28abf36d7ba3c2e27",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_comparison.py",
+      "sha256": "5c71c3aa42e71635aec65d2b90d9727a92cfc4a119cfdeaae03a974db8f0b314",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_events.py",
+      "sha256": "c3f2c11948c2f160a67b5da6c78de22778f062cf81411c51ab15db4a596f83ab",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_evidence_review.py",
+      "sha256": "04ad5796fd163d51a7ec5f00fd5508fa017213dc322daf1614fe929d34dd7fde",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_examples.py",
+      "sha256": "c7ef746f87f9fc7c8c52cdfb7f516233ea4c72b3a7aca98d5c3fbbda2548e1e6",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_import_integration.py",
+      "sha256": "442b0451c661f1454b088db2cc713b7dc6760d9b510f44eeb600048d49e00408",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_llm_provider.py",
+      "sha256": "64e1e1097bd29a677a3c5ef5f73bc06efd211249006bad8dc04e531e9f15a854",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_metrics_edges.py",
+      "sha256": "015cfb99033522c228b051e0ffcdc3227ceb40c0c404bd96bf71fece52e28093",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_metrics_numerics.py",
+      "sha256": "4c26fd79d3b5c475cacd1d2e9427e9b2d0201cc1a210fb0f0d067f6b53ee00c2",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_models.py",
+      "sha256": "967f6cabafe123970a4b439b472aa81f19b2351b678218b75c8f0f2b2504c49b",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_parser.py",
+      "sha256": "ea587cdfded93f2d5e7227f359a0110cfcb39a18c153e4e4a1eee3ecdd0e6f06",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_performance_multistep.py",
+      "sha256": "011974efaa82ca130ab44ad2b59ac2c494de5a36978faab59287913a4508d36c",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_performance_ui.py",
+      "sha256": "1dfaa90752c2724e90bcdcfecc47f27650715285be49adde46963a0be51e815b",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_quality.py",
+      "sha256": "dddb3d59d424062e83688b7495e484507929f018426a793e8d3228fb994ca549",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_report_ui.py",
+      "sha256": "3f454b94869a24710624ef9c0ab0f4c0323e7b57574628d3c1167f95b21a2002",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_reports.py",
+      "sha256": "3181b8a0b41ebae473485c14424555c9c327944af89c041a745976451d02351b",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_session.py",
+      "sha256": "97a8b302edf269a2e9183ed9749f06e19fa69d275cc4770cd614874f4a69c3fc",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_stage4_regressions.py",
+      "sha256": "e0ae402f90087b63537bfdf08191513fdbe9baa84c49773c2686d4e50dda60f8",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_stage4_ui.py",
+      "sha256": "37acd25afc3e0ecedaa2a6b588e534f98dc8ccd5a217c97a6ad462b40e0ab4b7",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_steps.py",
+      "sha256": "cb770bf97d715afc32fd583d92d78674fc065b9fb821d1adca3e929db99d030d",
+      "unchanged": true
+    }
+  ],
+  "changed_within_baseline_inventory": [
+    "agent/config.py",
+    "agent/tools.py",
+    "ui/components.py",
+    "ui/evidence.py",
+    "ui/report_page.py",
+    "docs/METRICS.md",
+    "requirements.lock.txt"
+  ],
+  "git": {
+    "tracked_files": 0,
+    "staged_files": 0,
+    "remote_names": [],
+    "candidate_files": 113,
+    "secret_scan": "Pattern and candidate-path audit: only 2 existing explicit test strings; not proof against every unknown secret.",
+    "public_csv_manifests_match": 5
+  },
+  "browser": {
+    "tool": "CUA actual in-app browser",
+    "url": "http://127.0.0.1:8501/",
+    "first_start_empty_session": true,
+    "actual_file_chooser_upload": true,
+    "utf8_bom_semicolon": true,
+    "manual_millisecond_mapping": true,
+    "uploaded_data": {
+      "rows": 121,
+      "duration_s": 6,
+      "quality_issues": 0,
+      "rise_time_display_s": 1.97772,
+      "overshoot_display_pct": 0,
+      "settling_time_display_s": 3.52116
+    },
+    "same_name_changed_content_revokes_mapping_and_curves": true,
+    "replacement_ui_sha256": "2c2e50b5ac71cde0b1be7fc31d5b4cbe86ae156651dd16ca933d040a7ce7c6b6",
+    "quality_example_evidence_count": 23,
+    "missing_time_event_row_focused": 34,
+    "pi_a_b_confirmed_separately_and_saved": true,
+    "comparison_common_seconds": 20,
+    "comparison_window_change_revokes_result": true,
+    "comparison_relative_alignment_rendered": true,
+    "ai_unconfigured_input_and_send_disabled": true,
+    "ab_report_generated": true,
+    "report_rendered_charts": 8,
+    "report_qa_rmse_a": 0.22841650252730472,
+    "report_comparison_rmse_a": 0.23298670253502995,
+    "report_comparison_rmse_b": 0.11032715634575808,
+    "report_rise_time_a": 6.10661623679659,
+    "report_rise_time_b": 1.0754745393395544,
+    "report_id_security_test": "report-bf1c904789b74dee8c19892f6bc4b358",
+    "malicious_note_displayed_as_text": true,
+    "actual_download_events": [
+      "html",
+      "json",
+      "csv"
+    ],
+    "desktop_screenshot_inspected": true,
+    "tool_observation_limit": "DOM snapshot omitted a visible comparison dropdown option; screenshot and native accessibility confirmed it. Application was not changed for the tooling omission.",
+    "live_ai": "not verified; no real API request",
+    "offline_file_reopen": "manual required; file URL previously denied by browser policy"
+  },
+  "not_verified": [
+    "real model API",
+    "Docker build and run",
+    "Linux/macOS runtime",
+    "physical offline HTML file reopening",
+    "multi-user load test"
+  ]
+}

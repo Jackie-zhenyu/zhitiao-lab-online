@@ -1,0 +1,145 @@
+{
+  "generator_id": "zhitiao-lab.closed-loop",
+  "generator_version": "closed-loop-pi-v4.0",
+  "source_label": "闭环仿真数据，非实测",
+  "disclaimer": "这是离散PI与一阶对象共同计算产生的闭环仿真数据，不是实测。未人工调整响应曲线或预设性能优劣。",
+  "parameter_source": "教学对照用手工选定PI参数：A kp=0.6,ki=0.4；B kp=2,ki=2。其他仿真条件完全相同，未根据结果反向拟合曲线。",
+  "encoding": "utf-8-sig",
+  "delimiter": ",",
+  "common_conditions": {
+    "plant": {
+      "equation": "dy/dt=(-y+u)/tau",
+      "tau_s": 1.0,
+      "initial_actual": 0.0
+    },
+    "load": {
+      "external_load": 0.0,
+      "disturbance": "none"
+    },
+    "sampling": {
+      "start_s": 0.0,
+      "end_s": 21.0,
+      "h_s": 0.02,
+      "row_count": 1051
+    },
+    "target": {
+      "step_time_s": 1.0,
+      "before": 0.0,
+      "after": 1.0
+    },
+    "output_limits": {
+      "lower": -2.5,
+      "upper": 2.5
+    },
+    "noise": {
+      "mode": "none",
+      "seed": 20260906,
+      "seed_usage": "无噪声，记录种子但不调用随机数发生器。"
+    },
+    "controller_algorithm": {
+      "type": "discrete positional PI",
+      "initial_i_term": 0.0,
+      "update_order": [
+        "at t[k], read actual y[k] and target r[k]",
+        "e[k]=r[k]-y[k]",
+        "p_term[k]=kp*e[k]",
+        "i_term[k]=i_term[k-1]+ki*h*e[k] (update before output)",
+        "control[k]=clip(p_term[k]+i_term[k], lower, upper)",
+        "log time,target,actual,control,p_term,i_term,source_label",
+        "hold control[k] over [t[k],t[k+1]); update plant by exact ZOH"
+      ],
+      "anti_windup": "none; integral continues updating when output is clipped",
+      "derivative": "none",
+      "measurement": "actual equals plant state; no measurement delay or noise"
+    },
+    "plant_update": "y[k+1]=exp(-h/tau)*y[k]+(1-exp(-h/tau))*control[k]",
+    "final_sample": "最后一行记录该时刻计算的控制输出；不再推进到记录终点之后。",
+    "quantity": "响应量",
+    "unit": "1",
+    "time_unit": "s",
+    "optional_units": {
+      "control": "1",
+      "p_term": "1",
+      "i_term": "1"
+    },
+    "parameter_units": {
+      "kp": "1",
+      "ki": "1/s"
+    }
+  },
+  "examples": [
+    {
+      "example_id": "closed_loop_pi_a",
+      "title": "闭环 PI A",
+      "filename": "closed_loop_pi_a.csv",
+      "description": "闭环仿真数据，非实测；相同对象和条件，仅 PI 参数不同，优劣由程序指标计算。",
+      "quantity": "响应量",
+      "unit": "1",
+      "time_unit": "s",
+      "control_unit": "1",
+      "p_term_unit": "1",
+      "i_term_unit": "1",
+      "optional_units": {
+        "control": "1",
+        "p_term": "1",
+        "i_term": "1"
+      },
+      "source_label": "闭环仿真数据，非实测",
+      "source_kind": "simulated",
+      "parameters": {
+        "kp": 0.6,
+        "ki": 0.4
+      },
+      "output_limits": {
+        "lower": -2.5,
+        "upper": 2.5
+      },
+      "conditions": {
+        "plant": "一阶对象 dy/dt=(-y+u)/tau；tau=1 s；初始 y=0。",
+        "load": "外部负载=0，无外加扰动。",
+        "sampling": "h=0.02 s；t=0..21 s；t=1 s 时目标从0阶跃到1；精确ZOH对象更新。",
+        "environment": "确定性、无测量延迟、无噪声；种子20260906已记录但未调用随机数。",
+        "controller": "离散位置式PI：kp=0.6，ki=0.4 1/s；先更新积分再输出；无抗积分饱和。"
+      },
+      "row_count": 1051,
+      "sha256": "15bccb267450ad1e8deefa94cbb7909aa8430f1b0542eff1cc20906cfdf2d1e3"
+    },
+    {
+      "example_id": "closed_loop_pi_b",
+      "title": "闭环 PI B",
+      "filename": "closed_loop_pi_b.csv",
+      "description": "闭环仿真数据，非实测；相同对象和条件，仅 PI 参数不同，优劣由程序指标计算。",
+      "quantity": "响应量",
+      "unit": "1",
+      "time_unit": "s",
+      "control_unit": "1",
+      "p_term_unit": "1",
+      "i_term_unit": "1",
+      "optional_units": {
+        "control": "1",
+        "p_term": "1",
+        "i_term": "1"
+      },
+      "source_label": "闭环仿真数据，非实测",
+      "source_kind": "simulated",
+      "parameters": {
+        "kp": 2.0,
+        "ki": 2.0
+      },
+      "output_limits": {
+        "lower": -2.5,
+        "upper": 2.5
+      },
+      "conditions": {
+        "plant": "一阶对象 dy/dt=(-y+u)/tau；tau=1 s；初始 y=0。",
+        "load": "外部负载=0，无外加扰动。",
+        "sampling": "h=0.02 s；t=0..21 s；t=1 s 时目标从0阶跃到1；精确ZOH对象更新。",
+        "environment": "确定性、无测量延迟、无噪声；种子20260906已记录但未调用随机数。",
+        "controller": "离散位置式PI：kp=2，ki=2 1/s；先更新积分再输出；无抗积分饱和。"
+      },
+      "row_count": 1051,
+      "sha256": "b5754fad42db05d74082fb2876cda3235fe0e13ebc70e82df881938884799bc3"
+    }
+  ],
+  "manifest_sha256": "bde13c1c5c14e28b851054fd006c9f9cd062580284d6b080dfefb5ac65a23f27"
+}

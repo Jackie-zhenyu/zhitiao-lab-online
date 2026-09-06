@@ -1,0 +1,7 @@
+智调 Lab · 在线部署候选（尚未部署）
+把本文件所在目录的内容上传到独立GitHub仓库，入口 cloud_app.py。
+在 Streamlit Community Cloud 的 Advanced settings 选择 Python 3.12。
+首次部署 Secrets 留空，不迁移本机 .env；先验证公开示例与报告。
+此副本的 .streamlit/config.toml 监听0.0.0.0，仅用于云容器。
+本机仍应通过 scripts/start.cmd 启动，脚本限制127.0.0.1。
+详细步骤见 docs/STREAMLIT_CLOUD.md。没有真实URL前不可填写占位地址。

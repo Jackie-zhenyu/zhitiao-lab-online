@@ -1,0 +1,259 @@
+{
+  "stage": "competition-submission",
+  "date": "2026-09-06",
+  "status": "Local submission artifacts generated and verified; real AI integration remains unverified",
+  "environment": "Windows x64 / Python 3.12.14 / project .venv",
+  "tests": {
+    "command": ".venv\\Scripts\\python.exe -m pytest -q --junitxml=work/pytest-submission-final.xml",
+    "passed": 701,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "console_duration_s": 212.5,
+    "junit_duration_s": 212.108,
+    "started_at": "2026-09-06T14:24:31.889186+08:00",
+    "junit": "work/pytest-submission-final.xml",
+    "junit_sha256": "615a92442e1e9f117c6f07f55fa1197002496958e9c2baf6312fd0d1cd3a7018",
+    "console_log": "work/pytest-submission-final.log",
+    "console_log_sha256": "e61d9bf03b01178016e4717723bf03eef5ac244800987c7f0a54241399ac8256",
+    "existing_stage8_tests": 672,
+    "new_demo_tests": 7,
+    "new_packaging_tests": 22,
+    "single_full_test_run": true,
+    "offline_network_guard": true,
+    "real_api_integration_verified": false
+  },
+  "protected_core_baseline": "docs/acceptance/stage8-summary.json",
+  "protected_core": [
+    {
+      "file": "core/comparison.py",
+      "sha256": "34bcde8906d1ac9a9b6f25719214fcbbb49c2f80e5d01e1a67f2442354bb2b15",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/metric_models.py",
+      "sha256": "4190aaa2bf17dd02d92d959ff79f85a8f8be8a946f9703eb31fbfe3ff8946761",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/models.py",
+      "sha256": "a98eedb468419685c04d1146a90f4525c93b949549e909e72cc91649f667f476",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/metrics.py",
+      "sha256": "26d1ceb77cc518ba7f819687b71318a29a030a79bc72141125d9c5705411c7f9",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/event_models.py",
+      "sha256": "b9ae9d86fdbc74779402a7327c12860cbbbe7020a82c6eea77c656a61fb89514",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/events.py",
+      "sha256": "4bbfebea7edf1bb4059f9a440e33d55be84867bb553feda3b4e6ba0ba11fd713",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/performance.py",
+      "sha256": "b3853dff177df57e4dfe2b61990be6180ec38daef4b4fd2e15211ba4c8161485",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/comparison_models.py",
+      "sha256": "5f8ce9e31c6c15ea5d5a0a45456f19cf50dfc5394ea53f57c33a3da77b7537d5",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/steps.py",
+      "sha256": "4ab5fc774d5e8424a11adeff610ae7ba082ac24d062267b50f06640517c61af3",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/quality.py",
+      "sha256": "7d3e5349ef90f912e98d359ce5e9f0eba665627a78295db2a555199d93016dad",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/parser.py",
+      "sha256": "e342a5df42f0f75b26c295dd1add98eda06dbac73397ba012a10937fbf60db4c",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/import_models.py",
+      "sha256": "809d9958e3d4bf42d92a449b9af2d882d4668372fe9039763e15857bf4a7a327",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/__init__.py",
+      "sha256": "fd9065a51d046262f30c151f93c2e6d91bc109298644c161cbb24f42e4870640",
+      "matches_stage8": true
+    }
+  ],
+  "application_lockfile": {
+    "file": "requirements.lock.txt",
+    "sha256": "10ea910063f758ccec5d3df0e98c7620ad0a9a2d16b37451e685c210d51030fc"
+  },
+  "media_tools": {
+    "environment": "work/submission-tools/.venv",
+    "reportlab": "4.4.4",
+    "pypdf": "6.1.1",
+    "pillow": "11.3.0",
+    "imageio-ffmpeg": "0.6.0",
+    "tts": "Local System.Speech Huihui Chinese voice",
+    "ffmpeg_binary_version": "7.1-essentials_build-www.gyan.dev",
+    "application_dependencies_changed": false
+  },
+  "submission_limits": {
+    "pdf_max_pages": 20,
+    "pdf_max_bytes": 200000000,
+    "mp4_max_seconds": 300,
+    "mp4_max_bytes": 200000000,
+    "runnable_option": "Local source ZIP; actual form upload/location requirements must be checked"
+  },
+  "source_package": {
+    "script": "scripts/package_submission.py",
+    "exact_allowlist": true,
+    "public_csv_count": 5,
+    "csv_hashes_pinned": true,
+    "secret_values_never_logged": true,
+    "original_sources_read_only": true,
+    "final_archive_rebuild_required_after_materials": false,
+    "artifact_note": "Source archive manifest is distributed separately; rebuild after this summary is updated."
+  },
+  "verification_limits": [
+    "Real model API integration and online-agent demonstration not verified; no real model calls authorized or made",
+    "Video is a still-image walkthrough, not a continuous screen recording; human audio listening and platform transcoding remain manual",
+    "Docker and Linux/macOS runtime not verified",
+    "Physical offline reopening exported HTML remains manual",
+    "No real-device or multi-user load validation",
+    "No public deployment, remote push or service purchase performed"
+  ],
+  "media": {
+    "pdf": {
+      "file": "outputs/submission/智调Lab-应用方案.pdf",
+      "pages": 16,
+      "bytes": 771795,
+      "sha256": "18c62e3441dd1dd5bd86359da221fa527e08b7bf3eb1b7fc76dee38c23477a99",
+      "embedded_chinese_fonts": true,
+      "layout_text_blocks": 348,
+      "poppler_rendered_pages": 16,
+      "root_visually_reviewed_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    "mp4": {
+      "file": "outputs/submission/智调Lab-演示视频.mp4",
+      "bytes": 4707041,
+      "sha256": "dff9260a36772de9ee9c788634ec746bdc254528bdb86f231ed62926a7761ed9",
+      "duration_s": 249.34,
+      "size": [
+        1280,
+        720
+      ],
+      "video_codec": "H.264/yuv420p",
+      "audio_codec": "AAC",
+      "fps": 24,
+      "full_decode_exit_code": 0,
+      "fast_start_verified": true,
+      "voice": {
+        "culture": "zh-CN",
+        "voice": "Microsoft Huihui Desktop",
+        "engine": "Windows System.Speech, local",
+        "rate": 1
+      },
+      "all_23_chunks_non_silent": true,
+      "human_listening_verified": false,
+      "type": "Actual screenshots with captions and local synthesized narration; edited still-image demonstration",
+      "root_reviewed_extracted_chapters": [
+        "intro",
+        "analysis",
+        "comparison",
+        "ai",
+        "mechanism",
+        "report",
+        "project",
+        "outro"
+      ]
+    }
+  },
+  "browser": {
+    "tool": "CUA actual in-app browser",
+    "url": "http://127.0.0.1:8501/",
+    "first_order_load_mapping_units_step": true,
+    "new_file_invalidated_confirmation_results": true,
+    "quality_example_rows": 61,
+    "quality_issue_records": 21,
+    "event_cards": 23,
+    "missing_time_event_row_focused": 34,
+    "public_project_upload_validation_restore": true,
+    "comparison_common_window_s": 20,
+    "comparison_report_generated": true,
+    "project_download_control_generated": true,
+    "ai_unconfigured_chat_disabled": true,
+    "online_model_requests": 0,
+    "screenshots": [
+      {
+        "file": "01-home.png",
+        "sha256": "d5ea80e019b70216dad20047725def0069a365cfc920207115413f737c1cdeef",
+        "crop": null
+      },
+      {
+        "file": "02-analysis.png",
+        "sha256": "c118b2c1249d054145fdfb93a9d005944bb1dacce111bce0f5032a95b556a2e3",
+        "crop": null
+      },
+      {
+        "file": "02-mapping.png",
+        "sha256": "044f014cb52d028a7fe254fa9aed1b5717e5591be64f48e337612a682a5a6e73",
+        "crop": null
+      },
+      {
+        "file": "03-quality.png",
+        "sha256": "d7eff9bfdaae795475daa158431e2b026fe5987ccd0b4faafcf25841ba5f21f0",
+        "crop": null
+      },
+      {
+        "file": "04-events.png",
+        "sha256": "773229bd379086b58c43d99d99d633dfb3776ec34f3412ccc251adb1910c0d33",
+        "crop": null
+      },
+      {
+        "file": "05-comparison.png",
+        "sha256": "a21f0bcd54608f1149193b5cd9184744bba880f7576f3f2958e6d1e1603efbeb",
+        "crop": null
+      },
+      {
+        "file": "06-ai.png",
+        "sha256": "26327da7e1d0249ffb166039157053325023923acf63bca99318583439f420fe",
+        "crop": null
+      },
+      {
+        "file": "07-report.png",
+        "sha256": "1191b1ba98f969f02e97af9ea92626ad89dd10b81caf8ea5f00b3f5008e317b5",
+        "crop": null
+      },
+      {
+        "file": "08-project.png",
+        "sha256": "5b8fda54ef73c02509d7697c03bd80c22c9ea63f6f677747294d8599434a1acd",
+        "crop": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+﻿智调 Lab · 可运行源码交付
+
+解压后进入 zhitiao-lab 文件夹，先安装 Python 3.12。
+Windows：scripts\install.cmd，然后 scripts\start.cmd。
+Linux/macOS：python3.12 -m venv .venv
+  .venv/bin/python -m pip install --only-binary=:all: -r requirements.lock.txt
+  .venv/bin/python -m pip check
+  .venv/bin/python scripts/manage.py start
+打开 http://127.0.0.1:8501/ 。Ctrl+C 停止。
+
+测试：Windows .venv\Scripts\python.exe -m pytest
+Linux/macOS .venv/bin/python -m pytest
+安装依赖通常需要网络；安装完成后全部本地分析不需要 API Key。
+AI 必须由用户自行配置和逐轮授权，无配置时明确显示“AI 未配置”。
+
+包内仅有公开源码、测试、文档、锁定依赖清单和五份公开示例CSV。
+三份示例为解析函数合成数据，两份为闭环仿真数据，均非实测。
+不含虚拟环境、.env、任何真实密钥、私人实验、项目包、日志、缓存、
+PDF/MP4成品；应用方案和演示视频作为独立交付文件提供。
+依赖包本体不包含在ZIP中，首次安装不是离线安装。
+
+完整操作与验证边界见 README.md、docs/RUNNABLE_SUBMISSION.md、
+docs/ACCEPTANCE.md；实际测试以验收文档中的记录为准。
+SHA256SUMS.txt 校验包内原始条目字节；摘要证明完整性，不认证作者。
+下载项目包才能在关闭或重启后恢复，当前应用没有自动保存。
+真实 API 联调、Docker 和其他系统的实机验收状态以验收文档为准。

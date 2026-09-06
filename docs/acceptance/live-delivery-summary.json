@@ -1,0 +1,135 @@
+{
+  "stage": "复赛交付：公开单实验真实AI联调后的更新",
+  "date": "2026-09-06",
+  "environment": "Windows x64 / Python 3.12.14 / project .venv",
+  "output_directory": "outputs/submission-live",
+  "previous_delivery_preserved": "outputs/submission",
+  "tests": {
+    "command": "python -m pytest -q --junitxml=work/pytest-live-delivery.xml",
+    "passed": 701,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "console_duration_s": 73.94,
+    "junit_duration_s": 72.597,
+    "junit": "work/pytest-live-delivery.xml",
+    "junit_sha256": "7919c99192aac6c3c21c982dbabb30ca094c49160dc092a1f1a6c275c32f9c56",
+    "console_log": "work/pytest-live-delivery.log",
+    "console_log_sha256": "5def06b95bfee87d3e45edf8cde6e4454f60996087e8f28cd25585c391217352",
+    "offline_network_guard": true,
+    "single_full_test_run": true,
+    "real_api_counted_in_offline_tests": false
+  },
+  "protected_core": [
+    {
+      "file": "core/comparison.py",
+      "sha256": "34bcde8906d1ac9a9b6f25719214fcbbb49c2f80e5d01e1a67f2442354bb2b15",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/metric_models.py",
+      "sha256": "4190aaa2bf17dd02d92d959ff79f85a8f8be8a946f9703eb31fbfe3ff8946761",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/models.py",
+      "sha256": "a98eedb468419685c04d1146a90f4525c93b949549e909e72cc91649f667f476",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/metrics.py",
+      "sha256": "26d1ceb77cc518ba7f819687b71318a29a030a79bc72141125d9c5705411c7f9",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/event_models.py",
+      "sha256": "b9ae9d86fdbc74779402a7327c12860cbbbe7020a82c6eea77c656a61fb89514",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/events.py",
+      "sha256": "4bbfebea7edf1bb4059f9a440e33d55be84867bb553feda3b4e6ba0ba11fd713",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/performance.py",
+      "sha256": "b3853dff177df57e4dfe2b61990be6180ec38daef4b4fd2e15211ba4c8161485",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/comparison_models.py",
+      "sha256": "5f8ce9e31c6c15ea5d5a0a45456f19cf50dfc5394ea53f57c33a3da77b7537d5",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/steps.py",
+      "sha256": "4ab5fc774d5e8424a11adeff610ae7ba082ac24d062267b50f06640517c61af3",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/quality.py",
+      "sha256": "7d3e5349ef90f912e98d359ce5e9f0eba665627a78295db2a555199d93016dad",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/parser.py",
+      "sha256": "e342a5df42f0f75b26c295dd1add98eda06dbac73397ba012a10937fbf60db4c",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/import_models.py",
+      "sha256": "809d9958e3d4bf42d92a449b9af2d882d4668372fe9039763e15857bf4a7a327",
+      "matches_stage8": true
+    },
+    {
+      "file": "core/__init__.py",
+      "sha256": "fd9065a51d046262f30c151f93c2e6d91bc109298644c161cbb24f42e4870640",
+      "matches_stage8": true
+    }
+  ],
+  "live_ai": {
+    "file": "docs/acceptance/live-ai-summary.json",
+    "sha256": "8f669eef7154896ffeb1e91e02de082cb84046957917dc475818f5f1fcb9558e",
+    "single_experiment_single_question_passed": true,
+    "model_requests": 3,
+    "tool_calls": 3,
+    "output_corrections": 1,
+    "previous_authentication_failure_requests": 1,
+    "additional_cloud_requests_made_during_delivery": 0,
+    "all_seven_metrics_exactly_match_formal_public_snapshot": true,
+    "rmse_iae_independently_integrated_from_raw_timestamps": true
+  },
+  "media": {
+    "pdf": {
+      "file": "outputs\\submission-live\\智调Lab-应用方案.pdf",
+      "pages": 16,
+      "bytes": 765024,
+      "sha256": "d7fde709ace81f481a023438fd6192d3dbd36d59c60035d3b9227a1d241dbe7c",
+      "chinese_fonts_embedded": true,
+      "layout_blocks_checked": 350,
+      "review": "修改页1/9/10/14/16逐页查看；其余11页与上次已逐页验收的PNG像素一致。"
+    },
+    "video": {
+      "file": "outputs/submission-live/智调Lab-演示视频.mp4",
+      "duration_s": 266.58,
+      "bytes": 5321767,
+      "sha256": "14e5336452a80b2a3c0f11a01cb78551539b7d4dd4eee2459a220f0146e1e503",
+      "size": [
+        1280,
+        720
+      ],
+      "full_decode_exit_code": 0,
+      "fast_start_verified": true,
+      "type": "Actual application screenshots with captions and local narration; edited still-image demonstration, not continuous screen recording",
+      "source_screenshots": 12,
+      "human_listening_verified": false,
+      "chapter_frames_reviewed": 10
+    }
+  },
+  "limits": [
+    "仅一个实验的一次用户问题真实联调；真实区间追问与compare_runs未验证。",
+    "未验证真实设备、多用户负载、跨平台实机、Docker运行及物理断网重开HTML。",
+    "视频为真实界面截图定格讲解及本地合成旁白，不是连续录屏；未人工试听。",
+    "原A/B示例报告和公开项目包为AI未参与的冻结历史，保持原字节。"
+  ]
+}

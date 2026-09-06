@@ -1,0 +1,2 @@
+# Cloud uses the complete tested dependency lock.
+-r requirements.lock.txt

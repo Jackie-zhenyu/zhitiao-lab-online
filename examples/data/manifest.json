@@ -1,0 +1,114 @@
+{
+  "generator_id": "zhitiao-lab.examples",
+  "generator_version": "2.0.0",
+  "source_label": "解析函数合成数据",
+  "disclaimer": "不是实测数据，也不是实际闭环仿真。control 为解析给定输入，不是控制器输出。",
+  "encoding": "utf-8-sig",
+  "delimiter": ",",
+  "formula": {
+    "step_time_s": 1.0,
+    "time_constant_s": 0.7,
+    "target": "0 if t < 1 else 1",
+    "actual": "0 if t < 1 else 1-exp(-(t-1)/0.7)",
+    "control": "0.4*target; given analytically, not a closed-loop simulation"
+  },
+  "examples": [
+    {
+      "example_id": "first_order_step",
+      "title": "一阶解析阶跃响应",
+      "filename": "first_order_step.csv",
+      "description": "0–6 秒，1 秒前为零基线；时间常数 0.7 秒。不是实测或实际闭环仿真。",
+      "quantity": "响应量",
+      "unit": "1",
+      "time_unit": "s",
+      "control_unit": "1",
+      "source_label": "解析函数合成数据",
+      "source_kind": "simulated",
+      "row_count": 121,
+      "sha256": "b125afdefaa0910df7db2b0526ce974024af590dfda6e08857fa04118d0ffadd",
+      "parameters": {
+        "start_s": 0,
+        "end_s": 6,
+        "interval_s": 0.05
+      }
+    },
+    {
+      "example_id": "irregular_sampling",
+      "title": "非等间隔采样",
+      "filename": "irregular_sampling.csv",
+      "description": "固定随机种子，采样间隔轻微变化，并含一个名义间隔 4 倍的间隔。",
+      "quantity": "响应量",
+      "unit": "1",
+      "time_unit": "s",
+      "control_unit": "1",
+      "source_label": "解析函数合成数据",
+      "source_kind": "simulated",
+      "row_count": 121,
+      "sha256": "06a712dae05dce4a3529c5d8fa25fa23fe9f40e1e7fc164a3a743d09266a48a7",
+      "parameters": {
+        "seed": 20260905,
+        "interval_range_s": [
+          0.045,
+          0.055
+        ],
+        "nominal_interval_s": 0.05,
+        "large_gap_s": 0.2,
+        "large_gap_between_data_rows": [
+          60,
+          61
+        ]
+      }
+    },
+    {
+      "example_id": "quality_issues",
+      "title": "数据质量问题",
+      "filename": "quality_issues.csv",
+      "description": "人为注入缺失、非数字、无穷、重复时间与时间重置，供质量检查使用。",
+      "quantity": "响应量",
+      "unit": "1",
+      "time_unit": "s",
+      "control_unit": "1",
+      "source_label": "解析函数合成数据",
+      "source_kind": "simulated",
+      "row_count": 61,
+      "sha256": "863583fdec4e295c6141fbb164dfe7b8c97514b7a2a418db6d652425dc84059e",
+      "parameters": {
+        "original_interval_s": 0.1,
+        "injections": [
+          {
+            "data_row": 14,
+            "field": "actual",
+            "issue": "missing"
+          },
+          {
+            "data_row": 21,
+            "field": "target",
+            "issue": "non_numeric"
+          },
+          {
+            "data_row": 28,
+            "field": "control",
+            "issue": "infinity"
+          },
+          {
+            "data_row": 34,
+            "field": "time",
+            "issue": "missing"
+          },
+          {
+            "data_row": 40,
+            "field": "time",
+            "issue": "duplicate"
+          },
+          {
+            "data_row": 49,
+            "field": "time",
+            "issue": "reset_to_zero"
+          }
+        ],
+        "row_numbering": "1-based data rows, excluding header"
+      }
+    }
+  ],
+  "manifest_sha256": "7b3b1be56a62815b2515b19276b7fa1e5f720a82573d108418f2a152c131169c"
+}

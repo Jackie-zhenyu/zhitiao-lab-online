@@ -1,0 +1,92 @@
+{
+  "date": "2026-09-06",
+  "verification": "真实浏览器中的单次公开实验分析；不是模型替身",
+  "success": true,
+  "question": "分析实验A",
+  "provider": "qwen",
+  "model": "qwen-plus",
+  "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+  "sdk": "openai 2.54.0",
+  "authorization": "用户修正本机密钥后明确授权重试同一问题与摘要范围",
+  "source_label": "闭环仿真数据，非实测",
+  "source_sha256": "15bccb267450ad1e8deefa94cbb7909aa8430f1b0542eff1cc20906cfdf2d1e3",
+  "experiment_id": "exp-b40415f49bbdcb506de152a91f414889c5279f4f96917071994d1967fdedf9b6",
+  "requested_range_s": [0, 21],
+  "original_rows": [1, 1051],
+  "step": {"t0": 1, "r0": 0, "r1": 1, "y0": 0, "unit": "1"},
+  "model_requests_in_successful_turn": 3,
+  "successful_model_responses": 3,
+  "tool_calls": 3,
+  "transport_retries_in_successful_turn": 0,
+  "output_corrections": 1,
+  "validation": "第2次模型响应的输出或引用被拒绝；按既有预算纠正1次，第3次响应结构与本轮证据引用校验通过。未展示不合法原文。",
+  "records": [
+    {"kind":"model","status":"started","name":"chat.completions","round":1,"attempt":1},
+    {"kind":"model","status":"success","name":"chat.completions"},
+    {"kind":"tool","status":"started","name":"profile_data","arguments":{"experiment_id":"exp-b40415f49bbdcb506de152a91f414889c5279f4f96917071994d1967fdedf9b6"}},
+    {"kind":"tool","status":"success","name":"profile_data","result_id":"result-db5b2cd210f24780bc87ec6f0afb7c4f"},
+    {"kind":"tool","status":"started","name":"analyze_run","arguments":{"experiment_id":"exp-b40415f49bbdcb506de152a91f414889c5279f4f96917071994d1967fdedf9b6","time_range":{"start_s":0,"end_s":21},"options":{"include_response":true}}},
+    {"kind":"tool","status":"success","name":"analyze_run","result_id":"result-8293a637205e4589870e1b11df05b052"},
+    {"kind":"tool","status":"started","name":"detect_events","arguments":{"experiment_id":"exp-b40415f49bbdcb506de152a91f414889c5279f4f96917071994d1967fdedf9b6","time_range":{"start_s":0,"end_s":21},"options":{}}},
+    {"kind":"tool","status":"success","name":"detect_events","result_id":"result-f70e2623482b42bf934198496bdbc599"},
+    {"kind":"model","status":"started","name":"chat.completions","round":2,"attempt":1},
+    {"kind":"model","status":"success","name":"chat.completions"},
+    {"kind":"validation","status":"rejected","name":"evidence"},
+    {"kind":"model","status":"started","name":"chat.completions","round":3,"attempt":1},
+    {"kind":"model","status":"success","name":"chat.completions"},
+    {"kind":"validation","status":"success","name":"evidence"}
+  ],
+  "results": {
+    "profile_data": {
+      "result_id": "result-db5b2cd210f24780bc87ec6f0afb7c4f",
+      "row_count": 1051, "issue_count": 0, "duration_s": 21
+    },
+    "analyze_run": {
+      "result_id": "result-8293a637205e4589870e1b11df05b052",
+      "tracking_interval_s": [0, 21], "response_interval_s": [1, 21],
+      "metrics": {
+        "rmse_t": {"value":0.22841650252730472,"unit":"1","status":"success"},
+        "iae": {"value":2.495371903162585,"unit":"1·s","status":"success"},
+        "max_abs_error": {"value":1,"unit":"1","status":"success"},
+        "tail_bias": {"value":0.0020176513823605205,"unit":"1","status":"success"},
+        "rise_time": {"value":6.10661623679659,"unit":"s","status":"success"},
+        "overshoot_pct": {"value":0,"unit":"%","status":"success"},
+        "settling_time": {"value":11.482420282338806,"unit":"s","status":"success"}
+      },
+      "config": {
+        "tail_fraction":0.1,"rise_lower":0.1,"rise_upper":0.9,"relative_band":0.02,
+        "absolute_tolerance":0,"min_observation_s":0.5,"amplitude_epsilon":1e-9,
+        "target_flat_tolerance":0.000001,"baseline_window_s":0.5,"baseline_min_duration_s":0.1,
+        "baseline_min_points":3,"baseline_range_tolerance":0.02,"min_interval_ratio":0.5,
+        "max_interval_ratio":2,"reference_interval_s":0.019999999999999574
+      },
+      "algorithm_version":"control-metrics-v3.0"
+    },
+    "detect_events": {
+      "result_id":"result-f70e2623482b42bf934198496bdbc599",
+      "event_count":0,"returned_event_count":0,"actual_interval_s":[0,21],
+      "control_limit_status":"not_applicable",
+      "config":{
+        "oscillation_window_s":2,"oscillation_min_crossings":4,"oscillation_peak_to_peak":0.05,
+        "oscillation_deadband":0.01,"near_target_band":0.2,"target_flat_tolerance":0.000001,
+        "oscillation_min_time_fraction":0.25,"control_near_fraction":0.02,"control_min_duration_s":0.5,
+        "output_limits":null,"rate_limit":null,"rate_limit_confirmed":false,
+        "statistical_rate_factor":6,"statistical_min_jump":0.05
+      },
+      "algorithm_version":"evidence-rules-v4.0"
+    }
+  },
+  "adapter_version":"agent-tools-v5.0",
+  "limitations":[
+    "本次是单次问题的真实联调，不代表真实多轮区间追问或compare_runs已验证。",
+    "3个模型轮次属于一次用户问题，不等于3轮用户追问。",
+    "跟踪指标用0–21秒，原A/B报告用阶跃后1–21秒；两者不能直接混作相同配置。",
+    "目标归一化不是标准stepinfo；目标调节仅在本次观察内满足。",
+    "无现象事件不证明设备正常；未确认输出限值，不判断输出近限或积分饱和。",
+    "第一版解释由模型选择受控类别、程序渲染；不代表开放式理论问答或根因诊断。"
+  ],
+  "previous_failed_turn":{"model_requests":1,"tool_calls":0,"status":"authentication_or_access_denied","local_key_had_mask_characters":true},
+  "counted_as_offline_test":false,
+  "raw_csv_sent":false,
+  "credentials_included":false
+}

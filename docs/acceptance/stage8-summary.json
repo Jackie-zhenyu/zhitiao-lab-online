@@ -1,0 +1,113 @@
+{
+  "stage": 8,
+  "date": "2026-09-06",
+  "environment": "Windows x64 / Python 3.12.14 / project .venv",
+  "tests": {
+    "command": ".venv\\Scripts\\python.exe -m pytest -q --junitxml=work/pytest-stage8-final.xml",
+    "passed": 672,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "console_duration_s": 132.36,
+    "junit": "work/pytest-stage8-final.xml",
+    "junit_sha256": "c9f9889e9479843c7d3adcd474c60883157c8b7afec12274a011141da4524ad5",
+    "new_tests": 107,
+    "real_api_calls": 0
+  },
+  "protected_core": [
+    {
+      "file": "core/comparison.py",
+      "sha256": "34bcde8906d1ac9a9b6f25719214fcbbb49c2f80e5d01e1a67f2442354bb2b15"
+    },
+    {
+      "file": "core/metric_models.py",
+      "sha256": "4190aaa2bf17dd02d92d959ff79f85a8f8be8a946f9703eb31fbfe3ff8946761"
+    },
+    {
+      "file": "core/models.py",
+      "sha256": "a98eedb468419685c04d1146a90f4525c93b949549e909e72cc91649f667f476"
+    },
+    {
+      "file": "core/metrics.py",
+      "sha256": "26d1ceb77cc518ba7f819687b71318a29a030a79bc72141125d9c5705411c7f9"
+    },
+    {
+      "file": "core/event_models.py",
+      "sha256": "b9ae9d86fdbc74779402a7327c12860cbbbe7020a82c6eea77c656a61fb89514"
+    },
+    {
+      "file": "core/events.py",
+      "sha256": "4bbfebea7edf1bb4059f9a440e33d55be84867bb553feda3b4e6ba0ba11fd713"
+    },
+    {
+      "file": "core/performance.py",
+      "sha256": "b3853dff177df57e4dfe2b61990be6180ec38daef4b4fd2e15211ba4c8161485"
+    },
+    {
+      "file": "core/comparison_models.py",
+      "sha256": "5f8ce9e31c6c15ea5d5a0a45456f19cf50dfc5394ea53f57c33a3da77b7537d5"
+    },
+    {
+      "file": "core/steps.py",
+      "sha256": "4ab5fc774d5e8424a11adeff610ae7ba082ac24d062267b50f06640517c61af3"
+    },
+    {
+      "file": "core/quality.py",
+      "sha256": "7d3e5349ef90f912e98d359ce5e9f0eba665627a78295db2a555199d93016dad"
+    },
+    {
+      "file": "core/parser.py",
+      "sha256": "e342a5df42f0f75b26c295dd1add98eda06dbac73397ba012a10937fbf60db4c"
+    },
+    {
+      "file": "core/import_models.py",
+      "sha256": "809d9958e3d4bf42d92a449b9af2d882d4668372fe9039763e15857bf4a7a327"
+    },
+    {
+      "file": "core/__init__.py",
+      "sha256": "fd9065a51d046262f30c151f93c2e6d91bc109298644c161cbb24f42e4870640"
+    }
+  ],
+  "changed_preexisting_python_in_baseline": [
+    "tests/test_app.py",
+    "ui/comparison.py",
+    "ui/import_page.py"
+  ],
+  "other_changed_entrypoint": "app.py",
+  "git": {
+    "tracked_count": 0,
+    "candidate_count": 123,
+    "known_configured_credential_hits": 0,
+    "packages_environment_cache_private_data_excluded": true,
+    "committed_pushed_deployed": false
+  },
+  "browser": {
+    "tool": "CUA actual in-app browser",
+    "url": "http://127.0.0.1:8501/",
+    "actual_project_download_event": true,
+    "download_bytes": 36260,
+    "download_sha256": "4744d47149cda7602749b402fcd4042d0301afa0c8fb0c2fa56328c09b6d4834",
+    "restore_fixture": "outputs/stage8-browser-validation.labproj",
+    "restore_fixture_origin": "Public PI A/B examples generated through production AppTest UI and project export, then uploaded by real browser file chooser; distinct from the first download event file.",
+    "restored_current": "closed_loop_pi_b.csv",
+    "current_rows": 1051,
+    "duration_s": 21,
+    "saved_snapshots": 2,
+    "comparison_window_s": 20,
+    "restored_B_rise_display": "1.07547 s",
+    "restored_B_settling_display": "1.93851 s",
+    "source_label": "闭环仿真数据，非实测",
+    "historical_json_archive_only": true,
+    "ai_unconfigured_disabled": true,
+    "desktop_screenshot_viewed": true,
+    "clear_resets_controls_and_uploads": true
+  },
+  "verification_limits": [
+    "Real model API integration not verified",
+    "Docker build/run not verified",
+    "Linux/macOS runtime not verified",
+    "Physical offline reopening downloaded HTML remains manual",
+    "No multi-user load test or cross-version migration",
+    "No browser download path API; inbound download event verified, actual browser restoration used separately generated production project fixture"
+  ]
+}
