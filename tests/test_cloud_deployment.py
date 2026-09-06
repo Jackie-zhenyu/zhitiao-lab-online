@@ -1,6 +1,8 @@
 """Cloud preparation must preserve computation and never pick up local secrets."""
 from hashlib import sha256
 from pathlib import Path
+import shutil
+import subprocess
 import tomllib
 
 import pytest
@@ -57,3 +59,18 @@ def test_preparation_refuses_output_outside_project_outputs(tmp_path):
     with pytest.raises(public.SubmissionError, match="outputs"):
         cloud.write_cloud_bundle(tmp_path / "unrelated", tmp_path)
     assert not (tmp_path / "unrelated").exists()
+
+
+def test_cloud_git_upload_preserves_crlf_bytes_even_with_autocrlf_enabled(tmp_path):
+    git = shutil.which("git")
+    if not git:
+        pytest.skip("Git is needed to check checkout byte preservation")
+    files = cloud.cloud_files(ROOT, secrets=())
+    payload = b"verified original\r\nsecond line\r\n"
+    (tmp_path / ".gitattributes").write_bytes(files[".gitattributes"])
+    (tmp_path / "sample.txt").write_bytes(payload)
+    subprocess.run([git, "init", "--quiet"], cwd=tmp_path, check=True, capture_output=True)
+    subprocess.run([git, "-c", "core.autocrlf=true", "add", "--", ".gitattributes", "sample.txt"],
+                   cwd=tmp_path, check=True, capture_output=True)
+    staged = subprocess.run([git, "show", ":sample.txt"], cwd=tmp_path, check=True, capture_output=True)
+    assert staged.stdout == payload

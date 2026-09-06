@@ -49,6 +49,8 @@ def cloud_files(root: Path = ROOT, *, secrets: tuple[str, ...] | None = None) ->
     changed = original.replace(marker, 'address = "0.0.0.0"')
     files[config_name] = changed.encode("utf-8")
     files["requirements.txt"] = b"# Cloud uses the complete tested dependency lock.\n-r requirements.lock.txt\n"
+    # The data and source manifests refer to bytes, including line endings.
+    files[".gitattributes"] = b"# Preserve the bytes verified by SHA256SUMS.txt on every OS.\n* -text\n"
     files["CLOUD_DEPLOYMENT.txt"] = (
         "智调 Lab · 在线部署候选（尚未部署）\n"
         "把本文件所在目录的内容上传到独立GitHub仓库，入口 cloud_app.py。\n"
@@ -121,8 +123,11 @@ def main() -> int:
     args = parser.parse_args()
     try:
         result = write_cloud_bundle(args.output)
-    except (public.SubmissionError, OSError):
-        print("准备失败：检查输出目录是否已存在、路径权限、源文件或凭据安全检查；未覆盖已有交付。", file=sys.stderr)
+    except public.SubmissionError as error:
+        print(f"准备失败：{error}", file=sys.stderr)
+        return 1
+    except OSError:
+        print("准备失败：无法读写部署文件，请检查路径权限；未覆盖已有交付。", file=sys.stderr)
         return 1
     print(json.dumps({k: v for k, v in result.items() if k != "files"}, ensure_ascii=False))
     return 0
